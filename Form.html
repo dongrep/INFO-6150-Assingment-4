@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Feedback</title>
+    <style>
+      label {
+        float: left;
+        width: 150px;
+      }
+      #container {
+        width: 700px;
+        margin: auto;
+        background-color: beige;
+      }
+      main {
+        padding: 50px;
+      }
+
+      #table {
+        scale: 0.9;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+      }
+    </style>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="table.css" />
+  </head>
+  <body>
+    <div id="container">
+      <main>
+        <h2>Feeback</h2>
+        <h3>Love something? Hate something? Let us know!</h3>
+        Note : Fields marked with an asterisk(*) are mandatory
+        <br /><br />
+        <form method="post" id="myForm" onsubmit="return validateForm()">
+          <label>Title*:</label>
+          <input
+            type="radio"
+            name="title"
+            id="miss"
+            value="miss"
+            required
+          />Miss <input type="radio" name="title" id="mr" value="mr" />Mr.
+          <input type="radio" name="title" id="mrs" value="mrs" />Mrs.
+          <br /><br />
+          <label for="firstName">First Name*:</label>
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            placeholder="First Name"
+            required
+          />
+          <span id="error_firstName" style="color: red; display: none">
+            Enter valid first name!
+          </span>
+          <br /><br />
+
+          <label for="lastName">Last Name*:</label>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            placeholder="Last Name"
+            required
+          />
+          <span id="error_lastName" style="color: red; display: none">
+            Enter valid last name!
+          </span>
+          <br /><br />
+
+          <label for="email">Email Id*:</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="yourname@domain.com"
+            pattern="/^[a-zA-Z0-9._-]+@northeastern.edu+$/"
+            required
+          />
+          <span id="error_email" style="color: red; display: none">
+            Enter valid email!
+          </span>
+          <br /><br />
+
+          <label for="phoneNumber">Phone Number*:</label>
+          <input
+            type="text"
+            name="phoneNumber"
+            id="phoneNumber"
+            placeholder="xxx-xxx-xxxx"
+            required
+          />
+          <span id="error_phoneNumber" style="color: red; display: none">
+            Enter valid phone number!
+          </span>
+          <br /><br />
+
+          <label for="address1">Address 1*:</label>
+          <input type="text" name="address1" id="address1" required />
+          <span id="error_address1" style="color: red; display: none">
+            Enter valid address!
+          </span>
+          <br /><br />
+
+          <label for="address2">Address 2:</label>
+          <input type="text" name="address2" id="address2" />
+          <br /><br />
+
+          <label for="city">City*:</label>
+          <input type="text" name="city" id="city" required />
+          <span id="error_city" style="color: red; display: none">
+            Enter valid city!
+          </span>
+          <br /><br />
+
+          <label for="state">State*:</label>
+          <input type="text" name="state" id="state" required />
+          <span id="error_state" style="color: red; display: none">
+            Enter valid state!
+          </span>
+          <br /><br />
+
+          <label for="zipcode">ZipCode*:</label>
+          <input
+            type="text"
+            name="zipcode"
+            id="zipcode"
+            placeholder="xxxxxx"
+            required
+          />
+          <span id="error_zipcode" style="color: red; display: none">
+            Enter valid zipcode!
+          </span>
+          <br /><br />
+
+          <label for="source">How did you hear*:</label>
+          <input type="checkbox" name="source" value="facebook" /> Facebook
+          <input type="checkbox" name="source" value="google" /> Google
+          <input type="checkbox" name="source" value="yelp" /> Yelspan
+          <br /><br />
+
+          <!-- Add drop down with 5 options -->
+          <div>
+            <label for="rating">Rating*:</label>
+            <select name="rating" id="rating" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+          <br /><br />
+
+          <label for="comments">Comments*:</label>
+          <textarea
+            name="text"
+            id="comments"
+            placeholder="Your comments"
+            rows="5"
+            cols="25"
+            required
+          ></textarea>
+          <span id="error_text" style="color: red; display: none">
+            Enter valid comment!
+          </span>
+          <br /><br />
+          <input id="submitButton" type="Submit" disabled="true" />
+          <input type="Reset" />
+          <br /><br />
+        </form>
+      </main>
+    </div>
+    <div>
+      <h2>Feedback Table</h2>
+    </div>
+    <div id="table">
+      <table id="myTable" border="1">
+        <tr>
+          <th>Title</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Id</th>
+          <th>Phone Number</th>
+          <th>Address 1</th>
+          <th>Address 2</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zipcode</th>
+          <th>How did you hear</th>
+          <th>Rating</th>
+          <th>Remark</th>
+          <th>Comments</th>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

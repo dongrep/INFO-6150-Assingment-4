@@ -1,0 +1,22 @@
+#myTable input {
+  margin-left: 5px;
+}
+
+#myTable {
+  border: 2px solid green;
+  border-collapse: collapse;
+}
+#myTable td,
+th {
+  border: 1px solid green;
+  padding: 5px;
+}
+#myTable th {
+  color: #fff;
+  background-color: #a7c942;
+}
+#button {
+  color: #fff;
+  border-radius: 3px;
+  margin-left: 180px;
+}
